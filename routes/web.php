@@ -47,7 +47,11 @@ Route::get('add/transaction', function(){
 });
 Route::post('transaction', 'Transaction@add_transaction')->name('add_trans');
 
-Route::view('main','main');
+//Route::view('main','main');
+
+Route::get('main', function(){
+	return view('main');
+})->name('main');
 
 Route::post('login','Login@index')->name('login');
 
