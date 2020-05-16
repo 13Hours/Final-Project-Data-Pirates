@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 class Login extends Controller
 {
     public function index(Request $req){
@@ -14,9 +14,9 @@ class Login extends Controller
     		return redirect()->route('show_login')->with('msg','Invalid ID');
     	}
     	$t2 = $t1->password;
-    	$pwd = $req->password;
+    	$pwd = $req->pwd;
     	if($t2!=$pwd){
-    		return redirect()->route('show_login')->with('msg','Invalid Password');
+    		return redirect()->route('show_login')->with('msg',"Invalid Password ");
     	}
     	
 
